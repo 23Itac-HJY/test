@@ -1,6 +1,7 @@
 week02
- - linux : ls, ls -a, ls -al, pwd, cd, touch	
+ - linux : ls, ls -a, ls -al, pwd, cd, touc, cat > "file name" 내용입력후 ctrl + d, echo "내용" >> 파일명, clear
  - git : git init, git status, git add, git commit, git log
+ - git checkout ###, git checkout -, git branch -M main, git remote -v
 
 git config --global --list
 
