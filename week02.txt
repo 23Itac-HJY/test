@@ -1,7 +1,7 @@
 week02
  - linux : ls, ls -a, ls -al, pwd, cd, touc, cat > "file name" 내용입력후 ctrl + d, echo "내용" >> 파일명, clear
  - git : git init, git status, git add, git commit, git log
- - git checkout ###, git checkout -, git branch -M main, git remote -v
+ - git checkout ###, git checkout -, git branch -M main, git remote -v, git push -u : 옵션 -u 저장하고 있다가 올려줌, git push -u origin main, git clone . => 마침표를 붙이면 안의 내용물만 가져옴
 
 git config --global --list
 
