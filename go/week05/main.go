@@ -9,7 +9,7 @@ import (
 func main() {
 	fmt.Println("Input score : ")
 	reader := bufio.NewReader(os.Stdin)
-	inputScore, err := reader.ReadString('\n') // err declared and not used
+	inputScore, _ := reader.ReadString('\n') // option 1 에러 무시하고 진행하라는 의미
 	fmt.Println(inputScore)
 
 	// var now time.Time
