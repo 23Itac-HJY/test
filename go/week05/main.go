@@ -15,6 +15,11 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println(inputScore)
+	if inputScore >= 90 {
+		grade := "A Grade!" // invalid operation: inputScore >= 90 (mismatched types string and untyped int)
+	} else {
+		grade := "under A Grade..."
+	}
 
 	// var now time.Time
 	// now = time.Now()
