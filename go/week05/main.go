@@ -9,7 +9,7 @@ import (
 func main() {
 	fmt.Println("Input score : ")
 	reader := bufio.NewReader(os.Stdin)
-	inputScore := reader.ReadString('\n') //assignment mismatch: 1 variable but reader.ReadString returns 2 values
+	inputScore, err := reader.ReadString('\n') // err declared and not used
 	fmt.Println(inputScore)
 
 	// var now time.Time
