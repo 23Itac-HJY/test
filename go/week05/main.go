@@ -3,13 +3,15 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 )
 
 func main() {
-	fmt.Println("Input score : ")
+	fmt.Print("Input score : ")
 	reader := bufio.NewReader(os.Stdin)
-	inputScore, _ := reader.ReadString('\n') // option 1 에러 무시하고 진행하라는 의미
+	inputScore, err := reader.ReadString('\n') // option 2
+	log.Fatal(err)                             // 프로그램 종료해서 점수 출력 안됨
 	fmt.Println(inputScore)
 
 	// var now time.Time
