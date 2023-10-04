@@ -2,20 +2,34 @@ package main
 
 import (
 	"fmt"
-	"math"
 	"strings"
+	//reflect
 )
 
 func main() {
-	var c rune = '가'      // 작은 따옴표 => 룬, 큰따옴표 => 문자열
-	fmt.Println(c)        //유니코드값(UTF-8) 출력
-	fmt.Printf("%c\n", c) // 한 글자 출력
-	fmt.Printf("%T\n", c) // rune = int32 alias int32의 별명
+	texts := "G@ M@ney~~"
+	fmt.Println(texts)
+	r := strings.NewReplacer("@", "o")
+	newTexts := r.Replace(texts)
+	fmt.Println(newTexts)
 
-	fmt.Println(math.Ceil(2.71))
-	fmt.Println(math.Floor(2.71))
-	fmt.Println(math.Round(2.71))
-	fmt.Println("Hello Go~")
-	fmt.Println(strings.Title("go git github"))
+	// // zero value, 초기화를 안하면 갖는 값
+	// var c rune // = '가'
+	// var a int  // 7
+	// var b float64
+	// var d bool
+	// var e string
+
+	// // fmt.Printf("%c\n", c)
+	// // fmt.Printf("%T\n", c)
+
+	// fmt.Println(a)
+	// fmt.Println(b)
+	// fmt.Println(c)
+	// fmt.Println(d)
+	// fmt.Println(e)
+
+	// fmt.Println(reflect.TypeOf(c))
+	// fmt.Println(reflect.TypeOf(a))
 
 }
