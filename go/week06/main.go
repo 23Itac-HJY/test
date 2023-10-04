@@ -1,35 +1,36 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"strings"
-	//reflect
+	"log" //Fatal 함수
+	"os"
+	"strconv" // ParseInt
+	"strings" // TrimSpace
 )
 
 func main() {
-	texts := "G@ M@ney~~"
-	fmt.Println(texts)
-	r := strings.NewReplacer("@", "o")
-	newTexts := r.Replace(texts)
-	fmt.Println(newTexts)
+	fmt.Print("구구단 단 입력 : ")
+	rd := bufio.NewReader(os.Stdin)
+	in, err := rd.ReadString('\n') // in은 현재 string
 
-	// // zero value, 초기화를 안하면 갖는 값
-	// var c rune // = '가'
-	// var a int  // 7
-	// var b float64
-	// var d bool
-	// var e string
+	if err != nil { // 조건문에 () 사용 안함
+		log.Fatal(err)
+	}
 
-	// // fmt.Printf("%c\n", c)
-	// // fmt.Printf("%T\n", c)
-
-	// fmt.Println(a)
-	// fmt.Println(b)
-	// fmt.Println(c)
-	// fmt.Println(d)
-	// fmt.Println(e)
-
-	// fmt.Println(reflect.TypeOf(c))
-	// fmt.Println(reflect.TypeOf(a))
+	in = strings.TrimSpace(in)
+	dan, err := strconv.ParseInt(in, 10, 32) // 32bit로 했지만 int64 형으로 리턴
+	// dan, err := strconv.Atoi(in)  // 위와 동일, atoi는 int로 변환
+	if err != nil {
+		log.Fatal(err)
+	}
+	// for i := 1; i < 10; i++ {
+	// 	fmt.Println(dan, " * ", i, " = ", (int(dan) * i))
+	// }
+	i := 1
+	for i < 10 { // 다른 언어의 while과 동일
+		fmt.Println(dan, " * ", i, " = ", (int(dan) * i))
+		i++
+	}
 
 }
