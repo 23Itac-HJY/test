@@ -1,36 +1,31 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"log" //Fatal 함수
-	"os"
-	"strconv" // ParseInt
-	"strings" // TrimSpace
+	"math/rand"
+	"time" // seed 생성용 패키지
 )
 
+// 난수 추출된 수의 소수 판정 프로그램
 func main() {
-	fmt.Print("구구단 단 입력 : ")
-	rd := bufio.NewReader(os.Stdin)
-	in, err := rd.ReadString('\n') // in은 현재 string
+	// seed 설정
+	seed := time.Now().Unix()
+	rand.Seed(seed)
 
-	if err != nil { // 조건문에 () 사용 안함
-		log.Fatal(err)
-	}
+	count := 0
 
-	in = strings.TrimSpace(in)
-	dan, err := strconv.ParseInt(in, 10, 32) // 32bit로 했지만 int64 형으로 리턴
-	// dan, err := strconv.Atoi(in)  // 위와 동일, atoi는 int로 변환
-	if err != nil {
-		log.Fatal(err)
+	number := rand.Intn(150) + 2 // 0과 1 제외, 2~151 사이의 수
+	fmt.Println("임의로 추출된 수 : ", number)
+
+	for i := 1; i <= number; i++ {
+		if number%i == 0 {
+			count++
+		}
 	}
-	// for i := 1; i < 10; i++ {
-	// 	fmt.Println(dan, " * ", i, " = ", (int(dan) * i))
-	// }
-	i := 1
-	for i < 10 { // 다른 언어의 while과 동일
-		fmt.Println(dan, " * ", i, " = ", (int(dan) * i))
-		i++
+	if count == 2 {
+		fmt.Println(number, "는(은) 소수입니다.")
+	} else {
+		fmt.Println(number, "는(은) 소수가 아닙니다.")
 	}
 
 }
