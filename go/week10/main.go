@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"week10/src/greeting"
+	"week10/src/mymath"
+)
 
 func main() {
-	fmt.Print("Hello World!")
+	fmt.Println(mymath.MyAbs(-99))
+	fmt.Println(mymath.MyAbs(71))
+	greeting.Hi()
+	greeting.Hello()
 }
