@@ -40,4 +40,12 @@ func main() {
 	for _, prime := range primes {
 		fmt.Println(prime)
 	}
+	sum := 0
+	for _, prime := range primes {
+		sum = sum + prime
+	}
+	fmt.Println(sum)
+	fmt.Println(float64(sum) / float64(len(primes)))
+	fmt.Printf("%.2f\n", float64(sum)/float64(len(primes)))
+
 }
