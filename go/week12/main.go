@@ -16,7 +16,7 @@ func main() {
 
 	fmt.Println(a, len(a), cap(a))
 	fmt.Println(c, len(c), cap(c))
-	fmt.Printf("%x %x %x\n", &a[0], &as[0], &c[0])
+	fmt.Printf("%x %x %x\n", &a[0], &as[0], &c[0]) // 수용량 넘으면 주소값 변경됨
 
 	// a := []string{"a", "b", "c", "d"}
 	// as := a[:2]
