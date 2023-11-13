@@ -3,5 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello World!")
+	var s []int
+	s = make([]int, 5)
+
+	for _, value := range s {
+		fmt.Println(value)
+	}
 }
